@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using snowtexDormitoryApi.Data;
+using snowtexDormitoryApi.DTOs.admin.basicSetup.roomManagementsDto.commonFeature;
 using snowtexDormitoryApi.DTOs.admin.basicSetup.roomManagementsDto.roomDetails;
 using snowtexDormitoryApi.Models.admin.basicSetup.roomManagements;
 using System.IO;
@@ -64,7 +65,8 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
             var existingRoom = await _context.roomDetailsModels
                 .FirstOrDefaultAsync(r => r.roomId == roomDetailsRequest.roomId &&
                                           r.floorId == roomDetailsRequest.floorId &&
-                                          r.buildingId == roomDetailsRequest.buildingId);
+                                          r.buildingId == roomDetailsRequest.buildingId &&
+                                          r.isActive == true);
             if (existingRoom != null)
             {
                 return Conflict(new { status = 409, message = "Room details already exist." });
@@ -160,6 +162,92 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
         }
 
 
+        [HttpPut("{roomDetailsId}")]
+        public async Task<IActionResult> UpdateRoomDetails(int roomDetailsId, [FromBody] RoomDetailsPutRequestDto roomDetailsRequest)
+        {
+            if (roomDetailsRequest == null || roomDetailsId <= 0)
+            {
+                return BadRequest(new { status = 400, message = "Invalid request data." });
+            }
+
+            var existingRoomDetails = await _context.roomDetailsModels.FindAsync(roomDetailsId);
+
+            if (existingRoomDetails == null)
+            {
+                return NotFound(new { status = 404, message = "Room details not found." });
+            }
+
+            if (roomDetailsRequest.updatedBy.HasValue && !await UserExistsAsync(roomDetailsRequest.updatedBy.Value))
+            {
+                return NotFound(new { status = 404, message = "User not found." });
+            }
+
+            var buildingName = await GetNameByIdAsync(existingRoomDetails.buildingId, "building");
+            var floorName = await GetNameByIdAsync(existingRoomDetails.floorId, "floor");
+            var roomName = await GetNameByIdAsync(existingRoomDetails.roomId, "room");
+
+            if (string.IsNullOrEmpty(buildingName) || string.IsNullOrEmpty(floorName) || string.IsNullOrEmpty(roomName))
+            {
+                return NotFound(new { status = 404, message = "Invalid building, floor, or room data." });
+            }
+
+            // Process images
+            var updatedImages = await ProcessImagesForUpdateAsync(
+                roomDetailsRequest.roomImages,
+                buildingName,
+                floorName,
+                roomName,
+                roomDetailsRequest.updatedBy ?? 0
+            );
+
+            // Update room details
+            existingRoomDetails.roomDimension = roomDetailsRequest.roomDimension;
+            existingRoomDetails.roomSideId = roomDetailsRequest.roomSideId;
+            existingRoomDetails.roomBelconiId = roomDetailsRequest.roomBelconiId;
+            existingRoomDetails.attachedBathroomId = roomDetailsRequest.attachedBathroomId;
+            existingRoomDetails.commonFeatures = roomDetailsRequest.commonFeatures;
+            existingRoomDetails.availableFurnitures = roomDetailsRequest.availableFurnitures;
+            existingRoomDetails.bedSpecification = roomDetailsRequest.bedSpecification;
+            existingRoomDetails.bathroomSpecification = roomDetailsRequest.bathroomSpecification;
+            existingRoomDetails.roomImages = updatedImages;
+            existingRoomDetails.isActive = roomDetailsRequest.isActive ?? existingRoomDetails.isActive;
+            existingRoomDetails.updatedBy = roomDetailsRequest.updatedBy ?? existingRoomDetails.updatedBy;
+            existingRoomDetails.updatedTime = DateTime.UtcNow;
+
+            _context.roomDetailsModels.Update(existingRoomDetails);
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                status = 200,
+                message = "Room details updated successfully!",
+                roomDetailsId = existingRoomDetails.roomDetailsId
+            });
+        }
+
+        // Process images for update
+        private async Task<List<string>> ProcessImagesForUpdateAsync(List<string>? roomImages, string buildingName, string floorName, string roomName, int updatedBy)
+        {
+            var updatedImages = new List<string>();
+
+            if (roomImages != null && roomImages.Any())
+            {
+                foreach (var image in roomImages)
+                {
+                    if (image.StartsWith("data:image")) // Base64 image
+                    {
+                        var imageUrl = await SaveImageAsync(image, buildingName, floorName, roomName, updatedBy);
+                        updatedImages.Add(imageUrl);
+                    }
+                    else // Existing image URL
+                    {
+                        updatedImages.Add(image);
+                    }
+                }
+            }
+
+            return updatedImages;
+        }
 
 
 
@@ -394,6 +482,40 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
             });
         }
 
+
+        // DELETE api/admin/room/roomdetails/
+        [HttpDelete("{roomDetailsId:int}")]
+        public async Task<IActionResult> DeleteRoomDetails(int roomDetailsId, [FromBody] RoomDetailsDeleteRequestDto requestDto)
+        {
+            // Validate if user exists
+            if (!await UserExistsAsync(requestDto.inactiveBy))
+            {
+                return NotFound(new { status = 404, message = "User not found" });
+            }
+
+            // Find the Bed
+            var deletedRoomDetails= await _context.roomDetailsModels.FindAsync(roomDetailsId);
+
+            if (deletedRoomDetails == null || deletedRoomDetails.isActive == false)
+            {
+                return NotFound(new { status = 404, message = "Room Details not found or already inactive" });
+            }
+
+            // Perform soft delete
+            deletedRoomDetails.isActive = false;
+            deletedRoomDetails.inactiveBy = requestDto.inactiveBy;
+            deletedRoomDetails.inactiveDate = DateTime.UtcNow;
+
+            _context.roomDetailsModels.Update(deletedRoomDetails);
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                status = 200,
+                message = "Room Details deleted successfully (soft delete)",
+                data = deletedRoomDetails
+            });
+        }
 
 
     }
