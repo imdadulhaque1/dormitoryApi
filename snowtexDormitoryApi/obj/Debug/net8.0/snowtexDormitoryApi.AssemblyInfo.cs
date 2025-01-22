@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("snowtexDormitoryApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb7f0acc2a3166b77596ea9de441c553f0cca6c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b629517ae6c011e0c6609b67d04309ac47d9b2a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("snowtexDormitoryApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("snowtexDormitoryApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

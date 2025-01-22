@@ -515,6 +515,48 @@
   },
   {
     "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement.RoomDetailsController",
+    "Method": "UpdateRoomDetails",
+    "RelativePath": "api/admin/room/RoomDetails/{roomDetailsId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomDetailsId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roomDetailsRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.roomManagementsDto.roomDetails.RoomDetailsPutRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement.RoomDetailsController",
+    "Method": "DeleteRoomDetails",
+    "RelativePath": "api/admin/room/RoomDetails/{roomDetailsId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomDetailsId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "requestDto",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.roomManagementsDto.roomDetails.RoomDetailsDeleteRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement.RoomDetailsController",
     "Method": "GetRoomDetails",
     "RelativePath": "api/admin/room/RoomDetails/all",
     "HttpMethod": "GET",
