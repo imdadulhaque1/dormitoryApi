@@ -24,6 +24,7 @@ public class AuthDbContext : DbContext
     public DbSet<RoomAvailableFurnitureModel> roomAFModels { get; set; }
     public DbSet<RoomBedSpecificationModel> roomBedModels { get; set; }
     public DbSet<RoomBathroomSpecificationModel> roomBathroomModels { get; set; }
+    public DbSet<RoomDetailsModel> roomDetailsModels { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,6 +43,7 @@ public class AuthDbContext : DbContext
         modelBuilder.Entity<RoomAvailableFurnitureModel>().ToTable("RoomAvailableFurnitureTable");
         modelBuilder.Entity<RoomBedSpecificationModel>().ToTable("RoomBedSpecificationTable");
         modelBuilder.Entity<RoomBathroomSpecificationModel>().ToTable("RoomBathroomSpecificationTable");
+        modelBuilder.Entity<RoomDetailsModel>().ToTable("RoomDetailsTable");
 
 
         modelBuilder.Entity<UserModel>()

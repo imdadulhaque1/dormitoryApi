@@ -1116,6 +1116,93 @@
         }
       }
     },
+    "/api/admin/room/RoomDetails": {
+      "post": {
+        "tags": [
+          "RoomDetails"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoomDetailsPostRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoomDetailsPostRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoomDetailsPostRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "RoomDetails"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "buildingId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "floorId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "roomId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/room/RoomDetails/all": {
+      "get": {
+        "tags": [
+          "RoomDetails"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/admin/room/RoomFurniture": {
       "post": {
         "tags": [
@@ -2017,6 +2104,99 @@
           "inactiveBy": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomDetailsPostRequestDto": {
+        "required": [
+          "attachedBathroomId",
+          "availableFurnitures",
+          "bathroomSpecification",
+          "bedSpecification",
+          "commonFeatures",
+          "createdBy",
+          "roomBelconiId",
+          "roomDimension",
+          "roomSideId"
+        ],
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "floorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "buildingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomDimension": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomSideId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomBelconiId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "attachedBathroomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "commonFeatures": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "availableFurnitures": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "bedSpecification": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "bathroomSpecification": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "roomImages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using snowtexDormitoryApi.Data;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,7 +58,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
     {
-        policy.WithOrigins("http://192.168.15.26:3000") // Replace with your frontend's URL
+        policy.WithOrigins("http://localhost:3000") // Replace with your frontend's URL http://localhost:3000
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -72,6 +73,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+// Configure static file access for the "images" folder
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+            Path.Combine(Directory.GetCurrentDirectory(), "images")),
+    RequestPath = "/images"
+});
 
 app.UseHttpsRedirection();
 app.UseAuthentication();  // Ensure authentication comes before authorization

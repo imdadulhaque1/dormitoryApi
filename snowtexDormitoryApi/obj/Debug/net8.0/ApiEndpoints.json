@@ -467,6 +467,63 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement.RoomDetailsController",
+    "Method": "CreateRoomDetails",
+    "RelativePath": "api/admin/room/RoomDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomDetailsRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.roomManagementsDto.roomDetails.RoomDetailsPostRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement.RoomDetailsController",
+    "Method": "GetRoomDetails",
+    "RelativePath": "api/admin/room/RoomDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "buildingId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "floorId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "roomId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement.RoomDetailsController",
+    "Method": "GetRoomDetails",
+    "RelativePath": "api/admin/room/RoomDetails/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement.RoomFurnitureController",
     "Method": "CreateAvailableFurniture",
     "RelativePath": "api/admin/room/RoomFurniture",

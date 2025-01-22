@@ -173,3 +173,32 @@ D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\run
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\snowtexDormitoryApi.sourcelink.json
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_091018_6_0e9132f9.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\desktop.ini
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\roomDetails\SSL\Floor - A\Room - B\20250120_091018_6_0e9132f9.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\roomDetails\SSL\Floor - A\Room - B\20250120_091018_6_21563f96.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\roomDetails\SSL\Floor - A\Room - B\20250120_091018_6_aafa6236.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\roomDetails\SSL\Floor - A\Room - B\20250120_091018_6_fe35fa06.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\SOL\Floor - B\Room - E\20250119_110737_6_98866683.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\SOL\Floor - B\Room - E\20250119_110737_6_aef7664f.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\SOL\Floor - B\Room - E\20250119_110737_6_e58e86a8.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110702_6_228d366b.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110702_6_543d4b43.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110702_6_95ab3a48.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110702_6_de2c29c1.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110741_6_77e96c34.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110741_6_8b550eb0.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110741_6_9e597c9c.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_110741_6_c6bf3bae.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_111811_6_3ef6c995.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_111811_6_451e42ff.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_111811_6_8a433afe.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_111811_6_c1b657bb.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112306_6_0ec5f1e1.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112306_6_4179cfc8.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112306_6_61e1ede7.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112306_6_7a1aef49.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112440_6_3c4cae6a.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112440_6_80fab182.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112440_6_97b423b9.png
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\bin\Debug\net8.0\images\20250120_112440_6_e403815f.png
