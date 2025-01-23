@@ -11,11 +11,16 @@ namespace snowtexDormitoryApi.Models.admin.basicSetup.roomManagements
         public int floorId { get; set; }
         public int buildingId { get; set; }
 
+        // public bool? isAvailable { get; set; } = true;
+
         // Room dimension (e.g. size or area description)
         public required string roomDimension { get; set; }
 
         // Room side (1=east, 2=west, 3=north, 4=south)
         public required int roomSideId { get; set; }
+
+        // Single=1, Double=2, Queen=3, King=4
+        public int? bedSpecificationId { get; set; }
 
         // Indicates if room has a balcony (1=Attached Belconi, 2=No Belconi)
         public required int roomBelconiId { get; set; }
@@ -30,7 +35,7 @@ namespace snowtexDormitoryApi.Models.admin.basicSetup.roomManagements
         public required List<int> availableFurnitures { get; set; }
 
         // JSON array of bed specifications
-        public required List<int> bedSpecification { get; set; }
+       // public required List<int> bedSpecification { get; set; }
 
         // JSON array of bathroom specifications
         public required List<int> bathroomSpecification { get; set; }
@@ -44,6 +49,7 @@ namespace snowtexDormitoryApi.Models.admin.basicSetup.roomManagements
         // The user who approved the room details (nullable)
         public int? approvedBy { get; set; }
 
+        public DateTime? approvedTime { get; set; }
         // Is the room active (default is true)
         public bool? isActive { get; set; } = true;
 

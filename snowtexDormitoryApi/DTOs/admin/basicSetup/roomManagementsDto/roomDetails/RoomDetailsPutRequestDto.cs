@@ -10,6 +10,9 @@
 
         // Room side (1=east, 2=west, 3=north, 4=south)
         public required int roomSideId { get; set; }
+        
+        // Single=1, Double=2, Queen=3, King=4
+        public int? bedSpecificationId { get; set; }
 
         // 1=Attached Belconi, 2=No Belconi
         public required int roomBelconiId { get; set; }
@@ -18,7 +21,7 @@
         public required int attachedBathroomId { get; set; }
         public required List<int> commonFeatures { get; set; }
         public required List<int> availableFurnitures { get; set; }
-        public required List<int> bedSpecification { get; set; }
+        //public required List<int> bedSpecification { get; set; }
         public required List<int> bathroomSpecification { get; set; }
 
         // Room image URLs
