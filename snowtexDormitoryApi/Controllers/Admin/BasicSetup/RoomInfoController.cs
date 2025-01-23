@@ -24,7 +24,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
             return await _context.Users.AnyAsync(u => u.userId == userId);
         }
 
-        // Create Floor
+        // Create Room
         [HttpPost("")]
         public async Task<IActionResult> CreateRoom(RoomPostRequestDto dto)
         {
@@ -50,7 +50,9 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
                 floorId = dto.floorId,
                 buildingId = dto.buildingId,
                 createdBy = dto.createdBy,
-                createdTime = dto.createdTime ?? DateTime.Now
+                createdTime = dto.createdTime ?? DateTime.Now,
+                //isAvailable = true,
+                haveRoomDetails = false
             };
 
             await _context.roomInfoModels.AddAsync(newRoom);
@@ -107,6 +109,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
                         roomBuilding.BuildingName,
                         roomBuilding.room.floorId,
                         FloorName = floor.floorName,
+                        roomBuilding.room.haveRoomDetails,
                         roomBuilding.room.createdBy,
                         roomBuilding.room.createdTime,
                         roomBuilding.room.isActive

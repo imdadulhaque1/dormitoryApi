@@ -10,9 +10,11 @@ namespace snowtexDormitoryApi.Models.admin.basicSetup
         public string? roomDescription { get; set; }
         public int floorId { get; set; }
         public int buildingId { get; set; }
-
+        public bool? isRoomAvailable { get; set; } = true;
+        public bool? haveRoomDetails { get; set; } = false;
         public bool? isApprove { get; set; } = false;
         public string? approvedBy { get; set; }
+        public DateTime? approvedTime { get; set; }
         public bool? isActive { get; set; } = true;
         public int? inactiveBy { get; set; }
         public required int createdBy { get; set; }

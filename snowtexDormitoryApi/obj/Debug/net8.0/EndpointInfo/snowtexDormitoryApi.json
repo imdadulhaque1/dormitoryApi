@@ -2213,7 +2213,7 @@
           "attachedBathroomId",
           "availableFurnitures",
           "bathroomSpecification",
-          "bedSpecification",
+          "bedSpecificationId",
           "commonFeatures",
           "createdBy",
           "roomBelconiId",
@@ -2242,6 +2242,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "bedSpecificationId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "roomBelconiId": {
             "type": "integer",
             "format": "int32"
@@ -2259,14 +2263,6 @@
             "nullable": true
           },
           "availableFurnitures": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
-          },
-          "bedSpecification": {
             "type": "array",
             "items": {
               "type": "integer",
@@ -2306,7 +2302,6 @@
           "attachedBathroomId",
           "availableFurnitures",
           "bathroomSpecification",
-          "bedSpecification",
           "commonFeatures",
           "roomBelconiId",
           "roomDimension",
@@ -2321,6 +2316,11 @@
           "roomSideId": {
             "type": "integer",
             "format": "int32"
+          },
+          "bedSpecificationId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           },
           "roomBelconiId": {
             "type": "integer",
@@ -2339,14 +2339,6 @@
             "nullable": true
           },
           "availableFurnitures": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
-          },
-          "bedSpecification": {
             "type": "array",
             "items": {
               "type": "integer",
