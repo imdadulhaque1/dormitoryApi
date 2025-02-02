@@ -3,6 +3,7 @@
     public class DeleteFloorRequestDto
     {
         public required int inactiveBy { get; set; }
+
       
     }
 }

@@ -168,6 +168,74 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.PaidItemsController",
+    "Method": "CreatePaidItems",
+    "RelativePath": "api/admin/PaidItems",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.paidItemDto.postPaidItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.PaidItemsController",
+    "Method": "GetPaidItems",
+    "RelativePath": "api/admin/PaidItems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.PaidItemsController",
+    "Method": "UpdatePaidItems",
+    "RelativePath": "api/admin/PaidItems/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "putRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.paidItemDto.putPaidItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.PaidItemsController",
+    "Method": "DeletePaidItems",
+    "RelativePath": "api/admin/PaidItems/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "deleteRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.paidItemDto.deletePaidItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "snowtexDormitoryApi.Controllers.RoleBasedMenuController",
     "Method": "CreateRelationBetweenRoleAndMenu",
     "RelativePath": "api/admin/RoleBasedMenu",
