@@ -4,6 +4,7 @@ using snowtexDormitoryApi.Models.admin.basicSetup;
 using snowtexDormitoryApi.Models.admin.basicSetup.roomManagements;
 using snowtexDormitoryApi.Models.admin.menu;
 using snowtexDormitoryApi.Models.admin.RoleBasedUserMenu;
+using snowtexDormitoryApi.Models.admin.settings;
 
 namespace snowtexDormitoryApi.Data;
 
@@ -26,6 +27,8 @@ public class AuthDbContext : DbContext
     public DbSet<RoomBathroomSpecificationModel> roomBathroomModels { get; set; }
     public DbSet<RoomDetailsModel> roomDetailsModels { get; set; }
     public DbSet<PaidItemsModels> paidItemModels { get; set; }
+   public DbSet<NewPersonModel> newPersonModels { get; set; }
+    public DbSet<RoomCategoryModel> roomCategoryModels { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -46,7 +49,8 @@ public class AuthDbContext : DbContext
         modelBuilder.Entity<RoomBathroomSpecificationModel>().ToTable("RoomBathroomSpecificationTable");
         modelBuilder.Entity<RoomDetailsModel>().ToTable("RoomDetailsTable");
         modelBuilder.Entity<PaidItemsModels>().ToTable("PaidItemsTable");
-
+        modelBuilder.Entity<NewPersonModel>().ToTable("NewPersonTable");
+        modelBuilder.Entity<RoomCategoryModel>().ToTable("RoomCategoryTable");
 
         modelBuilder.Entity<UserModel>()
             .ToTable("userAuth")  // Specify the correct table name here
