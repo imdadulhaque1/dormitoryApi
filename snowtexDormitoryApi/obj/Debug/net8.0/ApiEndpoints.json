@@ -168,6 +168,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.settings.NewPersonController",
+    "Method": "CreateNewPerson",
+    "RelativePath": "api/admin/NewPerson",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.settings.newPerson.postNewPersonDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.settings.NewPersonController",
+    "Method": "GetAllPersons",
+    "RelativePath": "api/admin/NewPerson",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.settings.NewPersonController",
+    "Method": "UpdatePersonInfo",
+    "RelativePath": "api/admin/NewPerson/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "putRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.settings.newPerson.putNewPersonDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.settings.NewPersonController",
+    "Method": "DeleteNewPerson",
+    "RelativePath": "api/admin/NewPerson/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "deleteRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.settings.newPerson.deleteNewPersonDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.PaidItemsController",
     "Method": "CreatePaidItems",
     "RelativePath": "api/admin/PaidItems",
@@ -696,6 +770,74 @@
       {
         "Name": "requestDto",
         "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.roomManagementsDto.commonFeature.CFDeleteRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.RoomCategoryController",
+    "Method": "CreateRoomCategory",
+    "RelativePath": "api/admin/RoomCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.roomCategory.postRoomCategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.RoomCategoryController",
+    "Method": "GetAllRoomCategories",
+    "RelativePath": "api/admin/RoomCategory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.RoomCategoryController",
+    "Method": "UpdateRoomCategory",
+    "RelativePath": "api/admin/RoomCategory/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "putRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.roomCategory.putRoomCategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.RoomCategoryController",
+    "Method": "DeleteRoomCategory",
+    "RelativePath": "api/admin/RoomCategory/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "deleteRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.basicSetup.roomCategory.deleteRoomCategoryDto",
         "IsRequired": true
       }
     ],
