@@ -1431,6 +1431,36 @@
         }
       }
     },
+    "/api/admin/RoomBooking/availableRoom": {
+      "get": {
+        "tags": [
+          "RoomBooking"
+        ],
+        "parameters": [
+          {
+            "name": "searchByStartTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "searchByEndTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/admin/RoomCategory": {
       "post": {
         "tags": [

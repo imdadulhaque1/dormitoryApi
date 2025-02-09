@@ -885,6 +885,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.roomBooking.RoomBookingController",
+    "Method": "GetAvailableRooms",
+    "RelativePath": "api/admin/RoomBooking/availableRoom",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchByStartTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchByEndTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.RoomCategoryController",
     "Method": "CreateRoomCategory",
     "RelativePath": "api/admin/RoomCategory",
