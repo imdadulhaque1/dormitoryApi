@@ -5,14 +5,14 @@ namespace snowtexDormitoryApi.Models.admin.basicSetup
     public class PaidItemsModels
     {
         [Key]
-        public int paidItemId { get; set; }
+        public int itemId { get; set; }
         public required string name { get; set; }
         public required string price { get; set; }
-        public required int priceCalculateBy { get; set; }
+        public required int paidOrFree { get; set; }
         public required string remarks { get; set; }
 
         public bool? isApprove { get; set; } = false;
-        public string? approvedBy { get; set; }
+        public int? approvedBy { get; set; }
         public bool? isActive { get; set; } = true;
         public int? inactiveBy { get; set; }
         public DateTime? inactiveTime { get; set; }
