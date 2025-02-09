@@ -4,7 +4,7 @@
     {
         public required string name { get; set; }
         public required string price { get; set; }
-        public required int priceCalculateBy { get; set; }
+        public required int paidOrFree { get; set; }
         public required string remarks { get; set; }
         public required int updatedBy { get; set; }
         public DateTime? updatedTime { get; set; }

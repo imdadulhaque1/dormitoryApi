@@ -48,7 +48,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
             {
                 name = postRequest.name,
                 price = postRequest.price,
-                priceCalculateBy = postRequest.priceCalculateBy,
+                paidOrFree = postRequest.paidOrFree,
                 remarks = postRequest.remarks,
                 createdBy = postRequest.createdBy,
                 createdTime = DateTime.UtcNow,
@@ -91,7 +91,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
                 return StatusCode(404, new { status = 404, message = "User not found" });
             }
 
-            var modifiedPaidItem= await _context.paidItemModels.FirstOrDefaultAsync(r => r.paidItemId == id && r.isActive == true);
+            var modifiedPaidItem= await _context.paidItemModels.FirstOrDefaultAsync(r => r.itemId == id && r.isActive == true);
             if (modifiedPaidItem == null)
             {
                 return NotFound(new { status = 404, message = "Paid item not found on inactive." });
@@ -99,7 +99,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
 
             modifiedPaidItem.name = putRequest.name;
             modifiedPaidItem.price = putRequest.price;
-            modifiedPaidItem.priceCalculateBy = putRequest.priceCalculateBy;
+            modifiedPaidItem.paidOrFree = putRequest.paidOrFree;
             modifiedPaidItem.remarks = putRequest.remarks;
 
             modifiedPaidItem.updatedBy = putRequest.updatedBy;

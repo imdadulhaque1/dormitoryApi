@@ -1249,6 +1249,188 @@
         }
       }
     },
+    "/api/admin/RoomBooking": {
+      "post": {
+        "tags": [
+          "RoomBooking"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/postRoomBookingDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/postRoomBookingDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/postRoomBookingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "RoomBooking"
+        ],
+        "parameters": [
+          {
+            "name": "startTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "roomName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "floorName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "buildingName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "personName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "personPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "RoomBooking"
+        ],
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/putRoomBookingDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/putRoomBookingDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/putRoomBookingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/RoomBooking/{id}": {
+      "delete": {
+        "tags": [
+          "RoomBooking"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteRoomBookingDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteRoomBookingDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteRoomBookingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/admin/RoomCategory": {
       "post": {
         "tags": [
@@ -2565,6 +2747,11 @@
           "inactiveBy": {
             "type": "integer",
             "format": "int32"
+          },
+          "inactiveTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2772,6 +2959,14 @@
             "type": "string",
             "nullable": true
           },
+          "remarks": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomCategoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "floorId": {
             "type": "integer",
             "format": "int32"
@@ -2806,6 +3001,14 @@
           "roomDescription": {
             "type": "string",
             "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomCategoryId": {
+            "type": "integer",
+            "format": "int32"
           },
           "floorId": {
             "type": "integer",
@@ -2932,6 +3135,24 @@
         },
         "additionalProperties": false
       },
+      "deleteRoomBookingDto": {
+        "required": [
+          "inactiveBy"
+        ],
+        "type": "object",
+        "properties": {
+          "inactiveBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "inactiveTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "deleteRoomCategoryDto": {
         "required": [
           "inactiveBy"
@@ -3012,8 +3233,8 @@
         "required": [
           "createdBy",
           "name",
+          "paidOrFree",
           "price",
-          "priceCalculateBy",
           "remarks"
         ],
         "type": "object",
@@ -3026,9 +3247,59 @@
             "type": "string",
             "nullable": true
           },
-          "priceCalculateBy": {
+          "paidOrFree": {
             "type": "integer",
             "format": "int32"
+          },
+          "remarks": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "postRoomBookingDto": {
+        "required": [
+          "createdBy",
+          "endTime",
+          "personId",
+          "roomId",
+          "startTime"
+        ],
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "personId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paidItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "freeItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
           },
           "remarks": {
             "type": "string",
@@ -3139,8 +3410,8 @@
       "putPaidItemDto": {
         "required": [
           "name",
+          "paidOrFree",
           "price",
-          "priceCalculateBy",
           "remarks",
           "updatedBy"
         ],
@@ -3154,9 +3425,59 @@
             "type": "string",
             "nullable": true
           },
-          "priceCalculateBy": {
+          "paidOrFree": {
             "type": "integer",
             "format": "int32"
+          },
+          "remarks": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "updatedTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "putRoomBookingDto": {
+        "required": [
+          "endTime",
+          "freeItems",
+          "paidItems",
+          "startTime",
+          "updatedBy"
+        ],
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "personId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paidItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "freeItems": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
           },
           "remarks": {
             "type": "string",

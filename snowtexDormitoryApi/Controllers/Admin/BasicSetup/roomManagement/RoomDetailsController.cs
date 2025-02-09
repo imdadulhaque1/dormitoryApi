@@ -540,7 +540,6 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
             // Fetch related data (commonFeatures, availableFurnitures, bedSpecifications, bathroomSpecifications)
             var commonFeatureIds = roomDetails.SelectMany(r => r.commonFeatures).Distinct().ToList();
             var availableFurnitureIds = roomDetails.SelectMany(r => r.availableFurnitures).Distinct().ToList();
-            //var bedIds = roomDetails.SelectMany(r => r.bedSpecification).Distinct().ToList();
             var bathroomIds = roomDetails.SelectMany(r => r.bathroomSpecification).Distinct().ToList();
 
             var commonFeatures = await _context.roomCommonFeaturesModels
@@ -563,10 +562,14 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
             var roomInfo = await _context.roomInfoModels.FirstOrDefaultAsync(r => r.roomId == roomId);
             var floorInfo = await _context.floorInfoModels.FirstOrDefaultAsync(f => f.floorId == floorId);
             var buildingInfo = await _context.buildingInfoModels.FirstOrDefaultAsync(b => b.buildingId == buildingId);
+            var roomCategoryInfo = await _context.roomCategoryModels.FirstOrDefaultAsync(rc => rc.roomCategoryId == roomInfo.roomCategoryId);
 
             var roomName = roomInfo?.roomName ?? "Unknown";
             var floorName = floorInfo?.floorName ?? "Unknown";
             var buildingName = buildingInfo?.buildingName ?? "Unknown";
+            var roomCategoryName = roomCategoryInfo?.name ?? "Unknown";
+
+            var roomCategoryId = roomInfo.roomCategoryId;
 
             // Construct response
             var response = roomDetails.Select(r => new
@@ -578,6 +581,8 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
                 floorName, // Include floor name
                 r.buildingId,
                 buildingName, // Include building name
+                roomCategoryId,
+                roomCategoryName,
                 r.roomDimension,
                 r.roomSideId,
                 r.bedSpecificationId,

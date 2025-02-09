@@ -776,6 +776,115 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.roomBooking.RoomBookingController",
+    "Method": "CreateRoomBooking",
+    "RelativePath": "api/admin/RoomBooking",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.roomBooking.postRoomBookingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.roomBooking.RoomBookingController",
+    "Method": "FetchRoomBookingDetails",
+    "RelativePath": "api/admin/RoomBooking",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "endTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "roomName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "floorName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "buildingName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "personName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "personPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.roomBooking.RoomBookingController",
+    "Method": "UpdateRoomBooking",
+    "RelativePath": "api/admin/RoomBooking",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "putRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.roomBooking.putRoomBookingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "snowtexDormitoryApi.Controllers.Admin.roomBooking.RoomBookingController",
+    "Method": "DeleteRoomBooking",
+    "RelativePath": "api/admin/RoomBooking/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "deleteRequest",
+        "Type": "snowtexDormitoryApi.DTOs.admin.roomBooking.deleteRoomBookingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "snowtexDormitoryApi.Controllers.Admin.BasicSetup.RoomCategoryController",
     "Method": "CreateRoomCategory",
     "RelativePath": "api/admin/RoomCategory",
