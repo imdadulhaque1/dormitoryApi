@@ -215,9 +215,6 @@ namespace snowtexDormitoryApi.Controllers.Admin.roomBooking
                 }
             }
 
-
-
-
         [HttpPut]
         public async Task<IActionResult> UpdateRoomBooking(int bookingId, [FromBody] putRoomBookingDto putRequest)
         {
@@ -273,9 +270,6 @@ namespace snowtexDormitoryApi.Controllers.Admin.roomBooking
             return Ok(new { status = 200, message = "Room booking updated successfully!", bookingId = existingBooking.roomBookingId });
         }
 
-
-
-
         // DELETE api/roomBooking/{id}
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteRoomBooking(int id, [FromBody] deleteRoomBookingDto deleteRequest)
@@ -310,6 +304,43 @@ namespace snowtexDormitoryApi.Controllers.Admin.roomBooking
             });
         }
 
+
+        [HttpGet("availableRoom")]
+        public async Task<IActionResult> GetAvailableRooms(DateTime searchByStartTime, DateTime searchByEndTime)
+        {
+            try
+            {
+                if (searchByStartTime == default || searchByEndTime == default)
+                {
+                    return BadRequest(new { status = 400, message = "Invalid date range provided." });
+                }
+
+                var bookedRoomIds = await _context.roomBookingModels
+                    .Where(rb =>
+                        (searchByStartTime >= rb.startTime && searchByStartTime <= rb.endTime) ||
+                        (searchByEndTime >= rb.startTime && searchByEndTime <= rb.endTime) ||
+                        (rb.startTime >= searchByStartTime && rb.startTime <= searchByEndTime) ||
+                        (rb.endTime >= searchByStartTime && rb.endTime <= searchByEndTime))
+                    .Select(rb => rb.roomId)
+                    .Distinct()
+                    .ToListAsync();
+
+                var availableRooms = await _context.roomInfoModels
+                    .Where(r => !bookedRoomIds.Contains(r.roomId) && r.isActive == true)
+                    .ToListAsync();
+
+                if (!availableRooms.Any())
+                {
+                    return NotFound(new { status = 404, message = "No available rooms found for the selected time range." });
+                }
+
+                return Ok(new { status = 200, message = "Available rooms retrieved successfully.", data = availableRooms });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { status = 500, message = "Internal server error.", error = ex.Message });
+            }
+        }
 
 
     }
