@@ -9,6 +9,7 @@ namespace snowtexDormitoryApi.Models.admin.basicSetup
         public required string name { get; set; }
         public string? categoryBasedPrice { get; set; }
         public required string remarks { get; set; }
+        public int? noOfPerson { get; set; }
 
         public bool? isApprove { get; set; } = false;
         public string? approvedBy { get; set; }

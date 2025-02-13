@@ -49,6 +49,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
             {
                 name = postRequest.name,
                 categoryBasedPrice = postRequest.categoryBasedPrice,
+                noOfPerson = postRequest.noOfPerson,
                 remarks = postRequest.remarks,
                 createdBy = postRequest.createdBy,
                 createdTime = DateTime.UtcNow,
@@ -98,6 +99,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup
 
             modifiedRoomCategory.name = putRequest.name;
             modifiedRoomCategory.categoryBasedPrice = putRequest.categoryBasedPrice;
+            modifiedRoomCategory.noOfPerson = putRequest.noOfPerson;
             modifiedRoomCategory.remarks = putRequest.remarks;
 
             modifiedRoomCategory.updatedBy = putRequest.updatedBy;
