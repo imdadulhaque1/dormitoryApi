@@ -568,6 +568,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
             var floorName = floorInfo?.floorName ?? "Unknown";
             var buildingName = buildingInfo?.buildingName ?? "Unknown";
             var roomCategoryName = roomCategoryInfo?.name ?? "Unknown";
+            var roomWisePerson = roomCategoryInfo?.noOfPerson ?? '0';
 
             var roomCategoryId = roomInfo.roomCategoryId;
 
@@ -583,6 +584,7 @@ namespace snowtexDormitoryApi.Controllers.Admin.BasicSetup.roomManagement
                 buildingName, // Include building name
                 roomCategoryId,
                 roomCategoryName,
+                roomWisePerson,
                 r.roomDimension,
                 r.roomSideId,
                 r.bedSpecificationId,

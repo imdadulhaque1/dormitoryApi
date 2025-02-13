@@ -1283,105 +1283,6 @@
         "tags": [
           "RoomBooking"
         ],
-        "parameters": [
-          {
-            "name": "startTime",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "endTime",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "roomName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "floorName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "buildingName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "categoryName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "personName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "personPhone",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "RoomBooking"
-        ],
-        "parameters": [
-          {
-            "name": "bookingId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/putRoomBookingDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/putRoomBookingDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/putRoomBookingDto"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -3301,19 +3202,19 @@
         "required": [
           "createdBy",
           "endTime",
-          "personId",
-          "roomId",
+          "personInfo",
+          "roomInfo",
           "startTime"
         ],
         "type": "object",
         "properties": {
-          "roomId": {
-            "type": "integer",
-            "format": "int32"
+          "personInfo": {
+            "type": "string",
+            "nullable": true
           },
-          "personId": {
-            "type": "integer",
-            "format": "int32"
+          "roomInfo": {
+            "type": "string",
+            "nullable": true
           },
           "paidItems": {
             "type": "string",
@@ -3321,6 +3222,26 @@
           },
           "freeItems": {
             "type": "string",
+            "nullable": true
+          },
+          "totalPaidItemsPrice": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "totalFreeItemsPrice": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "totalRoomPrice": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "grandTotal": {
+            "type": "number",
+            "format": "float",
             "nullable": true
           },
           "startTime": {
@@ -3365,6 +3286,11 @@
           },
           "remarks": {
             "type": "string",
+            "nullable": true
+          },
+          "noOfPerson": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "createdBy": {
@@ -3475,56 +3401,6 @@
         },
         "additionalProperties": false
       },
-      "putRoomBookingDto": {
-        "required": [
-          "endTime",
-          "freeItems",
-          "paidItems",
-          "startTime",
-          "updatedBy"
-        ],
-        "type": "object",
-        "properties": {
-          "roomId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "personId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "paidItems": {
-            "type": "string",
-            "nullable": true
-          },
-          "freeItems": {
-            "type": "string",
-            "nullable": true
-          },
-          "startTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "endTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "remarks": {
-            "type": "string",
-            "nullable": true
-          },
-          "updatedBy": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "updatedTime": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "putRoomCategoryDto": {
         "required": [
           "name",
@@ -3543,6 +3419,11 @@
           },
           "remarks": {
             "type": "string",
+            "nullable": true
+          },
+          "noOfPerson": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "updatedBy": {

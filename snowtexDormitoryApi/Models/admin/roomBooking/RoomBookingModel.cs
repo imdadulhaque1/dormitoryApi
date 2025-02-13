@@ -6,18 +6,21 @@ namespace snowtexDormitoryApi.Models.admin.roomBooking
     {
         [Key]
         public int roomBookingId { get; set; }
-        public int roomId { get; set; }
-        public int personId { get; set; }
-
+        public required string personInfo { get; set; }
+        public required string roomInfo { get; set; }
         public string? paidItems { get; set; }
         public string? freeItems { get; set; }
+        public double? totalPaidItemsPrice { get; set; }
+        public double? totalFreeItemsPrice { get; set; }
+        public double? totalRoomPrice { get; set; }
+        public double? grandTotal { get; set; }
         public required DateTime startTime { get; set; }
         public required DateTime endTime { get; set; }
 
         public string? remarks { get; set; } 
 
         public bool? isApprove { get; set; } = false;
-        public string? approvedBy { get; set; }
+        public int? approvedBy { get; set; }
         public DateTime? approvedTime { get; set; }
         public bool? isActive { get; set; } = true;
         public int? inactiveBy { get; set; }

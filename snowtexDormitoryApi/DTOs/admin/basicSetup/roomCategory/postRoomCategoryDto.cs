@@ -5,6 +5,7 @@
         public required string name { get; set; }
         public string? categoryBasedPrice { get; set; }
         public required string remarks { get; set; }
+        public int? noOfPerson { get; set; }
 
         public required int createdBy { get; set; }
         public DateTime? createdTime { get; set; }

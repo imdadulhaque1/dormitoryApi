@@ -2,10 +2,14 @@
 {
     public class putRoomBookingDto
     {
-        public int roomId { get; set; }
-        public int personId { get; set; }
-        public required string paidItems { get; set; }
-        public required string freeItems { get; set; }
+        public required string personInfo { get; set; }
+        public required string roomInfo { get; set; }
+        public string? paidItems { get; set; }
+        public string? freeItems { get; set; }
+        public float? totalPaidItemsPrice { get; set; }
+        public float? totalFreeItemsPrice { get; set; }
+        public float? totalRoomPrice { get; set; }
+        public float? grandTotal { get; set; }
         public required DateTime startTime { get; set; }
         public required DateTime endTime { get; set; }
         public string? remarks { get; set; }
