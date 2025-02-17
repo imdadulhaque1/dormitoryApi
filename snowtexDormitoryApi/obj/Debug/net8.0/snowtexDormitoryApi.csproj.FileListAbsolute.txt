@@ -220,10 +220,10 @@ D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\sta
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.snowtexDormitoryApi.props
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.snowtexDormitoryApi.props
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\snowtexD.BAFC1144.Up2Date
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\snowtexDormitoryApi.dll
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\refint\snowtexDormitoryApi.dll
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\snowtexDormitoryApi.pdb
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\snowtexDormitoryApi.genruntimeconfig.cache
 D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\ref\snowtexDormitoryApi.dll
+D:\Kamal Vai\dotNet\snowtexDormitoryApi\snowtexDormitoryApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

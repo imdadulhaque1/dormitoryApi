@@ -14,6 +14,7 @@ namespace snowtexDormitoryApi.Models.admin.roomBooking
         public double? totalFreeItemsPrice { get; set; }
         public double? totalRoomPrice { get; set; }
         public double? grandTotal { get; set; }
+        public required int totalDays { get; set; }
         public required DateTime startTime { get; set; }
         public required DateTime endTime { get; set; }
 

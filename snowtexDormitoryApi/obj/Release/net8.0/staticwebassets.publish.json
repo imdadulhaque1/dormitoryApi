@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "f5rhceNa+Epam2w1Lsq1gMJGxMwZYIrgGHMKIBo82+s=",
+  "Source": "snowtexDormitoryApi",
+  "BasePath": "_content/snowtexDormitoryApi",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
