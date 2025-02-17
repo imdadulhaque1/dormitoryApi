@@ -3204,7 +3204,8 @@
           "endTime",
           "personInfo",
           "roomInfo",
-          "startTime"
+          "startTime",
+          "totalDays"
         ],
         "type": "object",
         "properties": {
@@ -3243,6 +3244,10 @@
             "type": "number",
             "format": "float",
             "nullable": true
+          },
+          "totalDays": {
+            "type": "integer",
+            "format": "int32"
           },
           "startTime": {
             "type": "string",
